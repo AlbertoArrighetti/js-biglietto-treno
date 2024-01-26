@@ -1,32 +1,22 @@
-// Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere e l'età del passeggero.
-
-// Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-// il prezzo del biglietto è definito in base ai km (0.21 € al km)
-// va applicato uno sconto del 20% per i minorenni
-// va applicato uno sconto del 40% per gli over 65.
-
-
-// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi 
-// sul prezzo). Questo richiederà un minimo di ricerca.
+// richiesta km
+let kmNumber = prompt("Inserire i kilometri da percorrere");
+if (isNaN(kmNumber)){
+    prompt("Il dato inserito non è un numero, inserire un numero valido");
+}
 
 
+// età
+let age = prompt("Inserire l'età del passeggero");
+if (isNaN(age)){
+    prompt("Non è un numero, inerire un età valida");
+}else if (age < 0){
+    prompt ("Età non valida, inseriscine una valida per continuare.");  
+}else if (age > 110){
+    prompt ("Età non valida, inseriscine una valida per continuare.");  
+}
 
 
-
-
-
-
-
-// const kmNumber = prompt("Inserire i kilometri da percorrere");
-
-// test
-const kmNumber = 70;
-
-// const age = prompt("Inserire l'età del passeggero");
-
-// test
-const age = 50;
-
+// calcolo prezzi
 let totalPrice;
 totalPrice = kmNumber * 0.21;
 
@@ -35,65 +25,28 @@ let ticketPrice = totalPrice;
 let discountPrice = totalPrice;
 
 
-
-
 document.getElementById("Km").innerHTML = `${kmNumber} Km`;
 document.getElementById("Age").innerHTML = `${age} anni`;
 
 
 
-
-
-
-
-
-
-
-
-
-
+// sconto
 
 if (age <= 17){
 
-    discountPrice = totalPrice - [(totalPrice * 20) / 100]; 
-    discountPrice.toFixed(2);
-    document.getElementById("Price").innerHTML = `${discountPrice}€`;
+    discountPrice = totalPrice - [(totalPrice * 20) / 100];
+    document.getElementById("Price").innerHTML = `${discountPrice.toFixed(2)}€`;
 
 } else if (age >= 65){
 
     discountPrice = totalPrice - [(totalPrice * 40) / 100];
-    discountPrice.toFixed(2);
-    document.getElementById("Price").innerHTML = `${discountPrice}€`;
+    document.getElementById("Price").innerHTML = `${discountPrice.toFixed(2)}€`;
 
 } else {
 
     document.getElementById("Price").innerHTML = `${ticketPrice.toFixed(2)}€`;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 console.log("numero km", kmNumber);
