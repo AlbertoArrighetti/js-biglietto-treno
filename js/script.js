@@ -18,21 +18,27 @@
 
 
 // const kmNumber = prompt("Inserire i kilometri da percorrere");
+
 // test
 const kmNumber = 70;
 
 // const age = prompt("Inserire l'età del passeggero");
+
 // test
 const age = 50;
 
 let totalPrice;
 totalPrice = kmNumber * 0.21;
 
-let ticketPrice = totalPrice
-let discountPrice;
+let ticketPrice = totalPrice;
 
-document.getElementById("Km").innerHTML = `${kmNumber} Km`
-document.getElementById("Age").innerHTML = `${age} anni`
+let discountPrice = totalPrice;
+
+
+
+
+document.getElementById("Km").innerHTML = `${kmNumber} Km`;
+document.getElementById("Age").innerHTML = `${age} anni`;
 
 
 
@@ -48,13 +54,21 @@ document.getElementById("Age").innerHTML = `${age} anni`
 
 
 if (age <= 17){
+
     discountPrice = totalPrice - [(totalPrice * 20) / 100]; 
+    discountPrice.toFixed(2);
     document.getElementById("Price").innerHTML = `${discountPrice}€`;
+
 } else if (age >= 65){
+
     discountPrice = totalPrice - [(totalPrice * 40) / 100];
+    discountPrice.toFixed(2);
     document.getElementById("Price").innerHTML = `${discountPrice}€`;
+
 } else {
-    document.getElementById("Price").innerHTML = `${ticketPrice}€`;
+
+    document.getElementById("Price").innerHTML = `${ticketPrice.toFixed(2)}€`;
+
 }
 
 
