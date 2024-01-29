@@ -21,16 +21,16 @@ if (isNaN(num3)){
 
 // calcolo media
 
-let average = (num1 + num2 + num3) / 3
+let average = (num1 + num2 + num3) / 3;
 
 document.getElementById("Avarage").innerHTML = 
-`La media dei numeri ${num1}, ${num2}, ${num3} è: <br> ${average.toFixed(2)}`
+`La media dei numeri ${num1}, ${num2}, ${num3} è: <br> ${average.toFixed(2)}`;
 
 
 
 
-console.log(num1)
-console.log(num2)
-console.log(num3)
+console.log(num1);
+console.log(num2);
+console.log(num3);
 
-console.log(average)
+console.log(average);
